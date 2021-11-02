@@ -2,6 +2,7 @@
 using API.DTO;
 using API.Entities;
 using API.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -24,6 +25,7 @@ namespace API.Controllers
             _fileService = fileService;
             _firebaseDataContext = new FirebaseDataContext();
         }
+        [Authorize]
         [HttpPost("submit")]
         public async Task<ActionResult<SubmissionDto>> Submit(SubmissionDto submissionDto)
         {
@@ -39,7 +41,11 @@ namespace API.Controllers
             {
                 if(submissionDto.CertificatesUrl[i] != null && submissionDto.CertificatesUrl[i] != "")
                 {
-                    _fileService(submissionDto.CertificatesUrl[i]);
+                    var result = await _fileService.Submit(submissionDto.CertificatesUrl[i]);
+
+                    if (result.Error != null) return BadRequest(result.Error.Message);
+
+                    sub.CertificatesUrl[i] = result.SecureUrl.AbsoluteUri;
                 }
             }
 
@@ -49,6 +55,7 @@ namespace API.Controllers
 
             return submissionDto;
         }
+        [Authorize]
         [HttpGet("get/{id}")]
         public async Task<ActionResult<List<Submission>>> GetSubs(string id)
         {
