@@ -1,7 +1,12 @@
-﻿using API.Interfaces;
+﻿using API.Helpers;
+using API.Interfaces;
+using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,7 +14,8 @@ namespace API.Services
 {
     public class FileService : IFileService
     {
-        public PhotoService(IOptions<CloudinarySettings> config)
+        private readonly Cloudinary _cloudinary;
+        public FileService(IOptions<CloudinarySettings> config)
         {
             var acc = new Account
                 (
@@ -20,7 +26,7 @@ namespace API.Services
 
             _cloudinary = new Cloudinary(acc);
         }
-        public async Task<ImageUploadResult> AddPhotoAsync(string path)
+        public async Task<ImageUploadResult> Submit(string path)
         {
             var uploadResult = new ImageUploadResult();
 
@@ -32,15 +38,14 @@ namespace API.Services
             FormFile file;
 
             var myStream = new MemoryStream(bytes);
-            file = new FormFile(myStream, 0, myStream.Length, null, "imageName");
+            file = new FormFile(myStream, 0, myStream.Length, null, "docName");
 
             if (file.Length > 0)
             {
                 using var stream = file.OpenReadStream();
                 var uploadParams = new ImageUploadParams
                 {
-                    File = new FileDescription("imageOfFood", stream),
-                    Transformation = new Transformation().Height(500).Width(500).Crop("fill").Gravity("face")
+                    File = new FileDescription("pdfDoc", stream)
                 };
 
                 uploadResult = await _cloudinary.UploadAsync(uploadParams);
