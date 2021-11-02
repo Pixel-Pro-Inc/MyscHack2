@@ -7,12 +7,18 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { VolunteerComponent } from './volunteer/volunteer.component';
+import { InternshipComponent } from './internship/internship.component';
+import { NatserviceComponent } from './natservice/natservice.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    LoginComponent
+    LoginComponent,
+    VolunteerComponent,
+    InternshipComponent,
+    NatserviceComponent
   ],
   imports: [
     BrowserModule,
