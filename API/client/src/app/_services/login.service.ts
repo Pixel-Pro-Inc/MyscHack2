@@ -11,13 +11,16 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   login(model: any) {
-    return this.http.post(this.baseurl + 'login', model).pipe(
-      map((fuck: User) => {
-        const user = fuck;
+    return this.http.post(this.baseurl, model).pipe(
+      map((response => {
+        const user = response;
         if (user) {
-          localStorage.setItem('user', JSON.stringify(user));
+          localStorage.setItem('user', JSON.stringify(user)); //Is this supposed to be set Item or get item?
+          console.log("Is this supposed to be set Item or get item?");
         }
+        return response;
       }))
+      )
   }
   logout() {
     localStorage.removeItem('user')

@@ -7,7 +7,7 @@ import { NatserviceComponent } from './natservice/natservice.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomepageComponent},
+  {path: '', component: HomepageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'national_service', component: NatserviceComponent},
   {path: 'volunteer', component: VolunteerComponent},

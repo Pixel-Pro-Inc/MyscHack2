@@ -12,4 +12,7 @@ export class NatserviceComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  hostSelection() {
+
+  }
 }
