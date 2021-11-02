@@ -1,0 +1,48 @@
+.bg-NationalServices {
+    /* The image used */
+    background-image: url("https://th.bing.com/th/id/OIP.JakSakCnBAeznLNEu7uKCwHaEK?w=278&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7");
+  
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .bg-Internships {
+    /* The image used */
+    background-image: url("https://th.bing.com/th/id/OIP.WMB3-Q_4Jy1WaOmHbIAKnQHaE2?pid=ImgDet&rs=1");
+  
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .bg-GovernmentVoluntering {
+    /* The image used */
+    background-image: url("https://th.bing.com/th/id/OIP.2WkjaYQFC0h5KUlvW7YHXgHaEt?w=277&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7");
+  
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
