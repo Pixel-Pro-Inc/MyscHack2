@@ -24,7 +24,11 @@ import { LearnmoreComponent } from './learnmore/learnmore.component';
     LoginComponent,
     VolunteerComponent,
     InternshipComponent,
-    NatserviceComponent
+    NatserviceComponent,
+    SignupComponent,
+    LearnmoreComponent,
+    ProfileComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
