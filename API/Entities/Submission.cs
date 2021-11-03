@@ -10,7 +10,7 @@ namespace API.Entities
     {
         public UserDto user { get; set; }
         public string Programme { get; set; }
-        public List<string> HostOrganizations { get; set; }
-        public List<string> CertificatesUrl { get; set; }
+        public string HostOrganizations { get; set; }
+        public string CertificateUrl { get; set; }
     }
 }

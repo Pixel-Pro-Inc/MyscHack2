@@ -32,22 +32,16 @@ namespace API.Controllers
             Submission sub = new Submission()
             {
                 user = submissionDto.user,
-                CertificatesUrl = submissionDto.CertificatesUrl,
+                CertificateUrl = submissionDto.CertificateUrl,
                 HostOrganizations = submissionDto.HostOrganizations,
                 Programme = submissionDto.Programme
             };
 
-            for (int i = 0; i < submissionDto.CertificatesUrl.Count; i++)
-            {
-                if(submissionDto.CertificatesUrl[i] != null && submissionDto.CertificatesUrl[i] != "")
-                {
-                    var result = await _fileService.Submit(submissionDto.CertificatesUrl[i]);
+            var result = await _fileService.Submit(submissionDto.CertificateUrl);
 
-                    if (result.Error != null) return BadRequest(result.Error.Message);
+            if (result.Error != null) return BadRequest(result.Error.Message);
 
-                    sub.CertificatesUrl[i] = result.SecureUrl.AbsoluteUri;
-                }
-            }
+            sub.CertificateUrl = result.SecureUrl.AbsoluteUri;
 
             int n = new Random().Next(100000, 999999);
 

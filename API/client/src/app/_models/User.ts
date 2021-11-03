@@ -1,5 +1,5 @@
 export interface User {  
-  OmangNumber: number;
-  Token: string;
-  FirstName: string;
+  omangNumber: number;
+  token: string;
+  firstName: string;
 }

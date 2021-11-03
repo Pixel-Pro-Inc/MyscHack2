@@ -2,8 +2,13 @@
     <div class="container">
       <a class="navbar-brand" routerLink="/">Ministry of Youth Sports and Culture</a>
 
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="" routerLink="/applications">My Applications</a>
+      </ul>
+
       <div class="dropdown" *ngIf="loggedIn()" dropdown>
-        <a class="dropdown-toggle text-light" dropdownToggle>Welcome {{getUser().FirstName | titlecase}}</a>
+        <a class="dropdown-toggle text-light" dropdownToggle>Welcome {{getUser().firstName | titlecase}}</a>
         <div class="dropdown-menu mt-3" *dropdownMenu>
           <ng-container class="mr-5">
             <div class="dropdown-divider"></div>

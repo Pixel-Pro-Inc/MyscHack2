@@ -23,8 +23,7 @@ export class NavComponent implements OnInit {
 
   getUser(): User{
     let userString = '';
-    console.log(localStorage.getItem('user'));
-    userString = (String)(localStorage.getItem('user'));
+    userString = (String)(localStorage.getItem('user'));    
 
     let user: User = JSON.parse(userString);
     

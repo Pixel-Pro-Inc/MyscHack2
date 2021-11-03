@@ -11,11 +11,14 @@ import { VolunteerComponent } from './volunteer/volunteer.component';
 import { InternshipComponent } from './internship/internship.component';
 import { NatserviceComponent } from './natservice/natservice.component';
 import { ProfileComponent } from './profile/profile.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NavComponent } from './nav/nav.component';
 import { SignupComponent } from './signup/signup.component';
 import { ToastrModule } from 'ngx-toastr';
 import { LearnmoreComponent } from './learnmore/learnmore.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ThanksComponent } from './thanks/thanks.component';
+import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { LearnmoreComponent } from './learnmore/learnmore.component';
     SignupComponent,
     LearnmoreComponent,
     ProfileComponent,
-    NavComponent
+    NavComponent,
+    ThanksComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +42,12 @@ import { LearnmoreComponent } from './learnmore/learnmore.component';
     FormsModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right'
-    })
+    }),
+    BsDropdownModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
