@@ -16,6 +16,7 @@ import { NavComponent } from './nav/nav.component';
 import { SignupComponent } from './signup/signup.component';
 import { ToastrModule } from 'ngx-toastr';
 import { LearnmoreComponent } from './learnmore/learnmore.component';
+import { ComplainComponent } from './complain/complain.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LearnmoreComponent } from './learnmore/learnmore.component';
     SignupComponent,
     LearnmoreComponent,
     ProfileComponent,
-    NavComponent
+    NavComponent,
+    ComplainComponent
   ],
   imports: [
     BrowserModule,
