@@ -10,15 +10,12 @@ import { FormsModule } from '@angular/forms';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import { InternshipComponent } from './internship/internship.component';
 import { NatserviceComponent } from './natservice/natservice.component';
-<<<<<<< HEAD
+import { ProfileComponent } from './profile/profile.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './nav/nav.component';
 import { SignupComponent } from './signup/signup.component';
 import { ToastrModule } from 'ngx-toastr';
 import { LearnmoreComponent } from './learnmore/learnmore.component';
-=======
-import { ProfileComponent } from './profile/profile.component';
->>>>>>> 3db3fee3457a7d8c9a5945b74945ec24682a7971
 
 @NgModule({
   declarations: [
@@ -27,14 +24,7 @@ import { ProfileComponent } from './profile/profile.component';
     LoginComponent,
     VolunteerComponent,
     InternshipComponent,
-    NatserviceComponent,
-<<<<<<< HEAD
-    NavComponent,
-    SignupComponent,
-    LearnmoreComponent
-=======
-    ProfileComponent
->>>>>>> 3db3fee3457a7d8c9a5945b74945ec24682a7971
+    NatserviceComponent
   ],
   imports: [
     BrowserModule,
