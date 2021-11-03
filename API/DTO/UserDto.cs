@@ -8,7 +8,7 @@ namespace API.DTO
     public class UserDto
     {
         public string FirstName { get; set; }
-        public string OmangNumber { get; set; }
+        public int OmangNumber { get; set; }
         public string Token { get; set; }
     }
 }

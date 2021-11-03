@@ -1,5 +1,7 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { map} from 'rxjs/operators';
 import { User } from '../_models/User';
 
@@ -7,20 +9,33 @@ import { User } from '../_models/User';
   providedIn: 'root'
 })
 export class LoginService {
-  baseurl = ' http://localhost:4200/api';
-  constructor(private http: HttpClient) { }
+  baseurl = 'https://localhost:5001/api';
+  constructor(private http: HttpClient, private router: Router, private toastr: ToastrService) { }
 
-  login(model: any) {
-    return this.http.post(this.baseurl + 'login', model).pipe(
-      map((fuck: User) => {
-        const user = fuck;
-        if (user) {
-          localStorage.setItem('user', JSON.stringify(user));
-        }
-      }))
+  login(model: any, dir: string) {
+    this.http.post(this.baseurl + dir, model).subscribe(response => {
+      localStorage.setItem('user', JSON.stringify(response));
+
+      let x : string = '';
+      if(localStorage.getItem('topic') == 'GVS'){
+        x = 'volunteer';
+      }
+      if(localStorage.getItem('topic') == 'NS'){
+        x = 'national_service';
+      }
+      if(localStorage.getItem('topic') == 'I'){
+        x = 'internship';
+      }
+
+      this.router.navigateByUrl('/' + x);
+    },
+    error =>{
+      this.toastr.error(error.error);
+    });
   }
+
   logout() {
-    localStorage.removeItem('user')
+    localStorage.removeItem('user');
   }
 
 }

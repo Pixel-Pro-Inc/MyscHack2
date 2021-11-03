@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../_services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +11,13 @@ export class LoginComponent implements OnInit {
 
   activeIntern: boolean = false;
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
   login() {
-
+    this.loginService.login(this.model, '/user/login');
   }
 
 }

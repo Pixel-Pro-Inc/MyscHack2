@@ -10,6 +10,11 @@ import { FormsModule } from '@angular/forms';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import { InternshipComponent } from './internship/internship.component';
 import { NatserviceComponent } from './natservice/natservice.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NavComponent } from './nav/nav.component';
+import { SignupComponent } from './signup/signup.component';
+import { ToastrModule } from 'ngx-toastr';
+import { LearnmoreComponent } from './learnmore/learnmore.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +23,20 @@ import { NatserviceComponent } from './natservice/natservice.component';
     LoginComponent,
     VolunteerComponent,
     InternshipComponent,
-    NatserviceComponent
+    NatserviceComponent,
+    NavComponent,
+    SignupComponent,
+    LearnmoreComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -37,7 +37,7 @@ namespace API
             services.AddScoped<IFileService, FileService>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddControllers();
-            //Cors
+            services.AddCors();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -70,7 +70,7 @@ namespace API
 
             app.UseRouting();
 
-            //Cors
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
 
             app.UseAuthorization();
 

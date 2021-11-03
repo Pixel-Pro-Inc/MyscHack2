@@ -74,7 +74,7 @@ namespace API.Controllers
                 Token = _tokenService.CreateToken(user)
             };
         }
-        public async Task<bool> UserTaken(string OmangNumber)
+        public async Task<bool> UserTaken(int OmangNumber)
         {
             var response = await _firebaseDataContext.GetData(dir);
             foreach (var item in response)
@@ -88,7 +88,7 @@ namespace API.Controllers
 
             return false;
         }
-        public async Task<User> GetUser(string OmangNumber)
+        public async Task<User> GetUser(int OmangNumber)
         {
             var response = await _firebaseDataContext.GetData(dir);
             foreach (var item in response)
