@@ -1,1 +1,40 @@
-<p>internship works!</p>
+<div class="row g-5">
+    <div class="p-4 p-md-5 mb-4">
+      <h4 class="mb-3">Internship application</h4>
+      <form  #registerForm="ngForm" (ngSubmit)="sendApplication()" autocomplete="off" novalidate="">
+        <h4> Select your latest qualification level</h4>
+        <select class="form-control" name="qualifications" [(ngModel)]="model.qualifications">
+            <option>BGSE</option>
+            <option>Degree</option>
+            <option>Diploma</option>
+            <option>Graduate</option>
+            <option>Post-doc</option>
+          </select>
+
+
+          <hr class="my-4">
+        <h4> Choose a host organiation</h4>
+        <select class="form-control" name="hosts" [(ngModel)]="model.hosts">
+            <option>BAC</option>
+            <option>BYC</option>
+            <option>BMC</option>
+            <option>BFA</option>
+            <option>BoFINET</option>
+            <option>BHX</option>
+            <option>BIH</option>
+            <option>BOU</option>
+
+          </select>
+
+          <hr class="my-4">
+          <button> Upload files
+            <i class="bi bi-upload"></i>
+          </button>
+          <div>
+              <h4 class="text-white"></h4>
+          </div>
+
+        <button class="w-100 btn btn-primary btn-lg" type="submit"  >Send application</button>
+      </form>
+    </div>
+  </div>

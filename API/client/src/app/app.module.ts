@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import { InternshipComponent } from './internship/internship.component';
 import { NatserviceComponent } from './natservice/natservice.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NatserviceComponent } from './natservice/natservice.component';
     LoginComponent,
     VolunteerComponent,
     InternshipComponent,
-    NatserviceComponent
+    NatserviceComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

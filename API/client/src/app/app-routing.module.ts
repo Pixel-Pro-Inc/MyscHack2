@@ -4,6 +4,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { InternshipComponent } from './internship/internship.component';
 import { LoginComponent } from './login/login.component';
 import { NatserviceComponent } from './natservice/natservice.component';
+import { ProfileComponent } from './profile/profile.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'national_service', component: NatserviceComponent},
   {path: 'volunteer', component: VolunteerComponent},
   {path: 'internship', component: InternshipComponent},
+  {path: 'profile', component: ProfileComponent},
 ];
 
 @NgModule({

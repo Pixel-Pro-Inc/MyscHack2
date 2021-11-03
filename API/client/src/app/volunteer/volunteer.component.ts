@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./volunteer.component.css']
 })
 export class VolunteerComponent implements OnInit {
-
+  model: any={}
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  hostSelection(model: any) {
+
+  }
+  sendApplication() {
+
+  }
 }

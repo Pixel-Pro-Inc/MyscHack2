@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./internship.component.css']
 })
 export class InternshipComponent implements OnInit {
-
+  model: any = {}
   constructor() { }
 
   ngOnInit(): void {
   }
+  hostSelection(model: any) {
 
+  }
+  sendApplication() {
+
+  }
 }
