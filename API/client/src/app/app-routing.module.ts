@@ -14,6 +14,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'national_service', component: NatserviceComponent},
   {path: 'volunteer', component: VolunteerComponent},
+  {path: 'signup', component: SignupComponent},
+  {path: 'learnmore', component: LearnmoreComponent},
   {path: 'internship', component: InternshipComponent},
 ];
 

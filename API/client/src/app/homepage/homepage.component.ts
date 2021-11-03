@@ -20,6 +20,17 @@ export class HomepageComponent implements OnInit {
 
   joinus(dir: string){
 
+    let x: string = '';
+    if(localStorage.getItem('topic') == 'GVS'){
+      x = 'volunteer';
+    }
+    if(localStorage.getItem('topic') == 'NS'){
+      x = 'national_service';
+    }
+    if(localStorage.getItem('topic') == 'I'){
+      x = 'internship';
+    }
+
     localStorage.setItem('topic', dir);
 
     if(localStorage.getItem('user') == null){
@@ -27,7 +38,7 @@ export class HomepageComponent implements OnInit {
     }
 
     if(localStorage.getItem('user') != null){
-      this.router.navigateByUrl(dir);
+      this.router.navigateByUrl(x);
     }
   }
 
