@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApplicationService {
-  baseUrl = 'https://localhost:5001/api';
+  baseUrl = 'https://myschackathon.azurewebsites.net/api';
 
   constructor(private http: HttpClient, private toastr: ToastrService, private router: Router) { }
 
@@ -21,12 +22,6 @@ export class ApplicationService {
       this.toastr.error(error.error);
     });
   }
-  get(dir: string){
-    this.http.get(this.baseUrl + dir).subscribe(response =>{
-      return response;
-    },
-    error =>{
-      this.toastr.error(error.error);
-    })
-  }
+
+  
 }

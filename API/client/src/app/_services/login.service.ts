@@ -9,7 +9,7 @@ import { User } from '../_models/User';
   providedIn: 'root'
 })
 export class LoginService {
-  baseurl = 'https://localhost:5001/api';
+  baseurl = 'https://myschackathon.azurewebsites.net/api';
   constructor(private http: HttpClient, private router: Router, private toastr: ToastrService) { }
 
   login(model: any, dir: string) {
@@ -26,6 +26,8 @@ export class LoginService {
       if(localStorage.getItem('topic') == 'I'){
         x = 'internship';
       }
+
+      console.log(response);
 
       this.router.navigateByUrl('/' + x);
     },

@@ -15,18 +15,24 @@ export class LearnmoreComponent implements OnInit {
   }
 
   clicked(){
-    let x : string = '';
-      if(localStorage.getItem('topic') == 'GVS'){
-        x = 'volunteer';
-      }
-      if(localStorage.getItem('topic') == 'NS'){
-        x = 'national_service';
-      }
-      if(localStorage.getItem('topic') == 'I'){
-        x = 'internship';
-      }
+    let x: string = '';
+    if(localStorage.getItem('topic') == 'GVS'){
+      x = 'volunteer';
+    }
+    if(localStorage.getItem('topic') == 'NS'){
+      x = 'national_service';
+    }
+    if(localStorage.getItem('topic') == 'I'){
+      x = 'internship';
+    }
 
-      this.router.navigateByUrl('/' + x);
+    if(localStorage.getItem('user') == null){
+      this.router.navigateByUrl('/login');
+    }
+
+    if(localStorage.getItem('user') != null){
+      this.router.navigateByUrl(x);
+    }
   }
 
 }

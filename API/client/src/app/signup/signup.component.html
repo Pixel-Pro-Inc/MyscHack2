@@ -15,26 +15,32 @@
                   <form #loginForm="ngForm" (ngSubmit)="signup()" autocomplete="off">
                     <b class="text-center text-muted">Create your free account</b>
                     <hr>
+                    <label>Omang Number</label>
                     <div class="form-group">
                       <input type="number" class="form-control" name="omangnumber"
                              [(ngModel)]="model.OmangNumber" placeholder="Omang number">
                     </div>
+                    <label>First Name</label>
                     <div class="form-group">
                         <input type="text" class="form-control" name="firstname"
                                [(ngModel)]="model.FirstName" placeholder="First name">
                       </div>
+                      <label>Last Name</label>
                       <div class="form-group">
                         <input type="text" class="form-control" name="lastname"
                                [(ngModel)]="model.LastName" placeholder="Last name">
                       </div>
+                      <label>Date of Birth</label>
                       <div class="form-group">
                         <input type="date" class="form-control" name="dob"
                                [(ngModel)]="model.DateOfBirth" placeholder="Date of birth">
                       </div>
+                      <label>Phone Number</label>
                       <div class="form-group">
                         <input type="number" class="form-control" name="phone"
                                [(ngModel)]="model.PhoneNumber" placeholder="Phone number">
                       </div>
+                      <label>Create a password</label>
                     <div class="form-group">
                       <input type="password" class="form-control" name="password"
                              [(ngModel)]="model.Password" placeholder="Password">

@@ -10,5 +10,6 @@ namespace API.DTO
         public string FirstName { get; set; }
         public int OmangNumber { get; set; }
         public string Token { get; set; }
+        public int PhoneNumber { get; set; }
     }
 }

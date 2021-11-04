@@ -71,7 +71,8 @@ namespace API.Controllers
             {
                 FirstName = user.FirstName,
                 OmangNumber = user.OmangNumber,
-                Token = _tokenService.CreateToken(user)
+                Token = _tokenService.CreateToken(user),
+                PhoneNumber = user.PhoneNumber
             };
         }
         public async Task<bool> UserTaken(int OmangNumber)

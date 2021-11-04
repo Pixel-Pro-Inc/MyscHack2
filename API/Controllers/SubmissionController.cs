@@ -10,6 +10,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Twilio;
+using Twilio.Clients;
+using Twilio.Rest.Api.V2010.Account;
 
 namespace API.Controllers
 {
@@ -47,10 +50,12 @@ namespace API.Controllers
 
             _firebaseDataContext.StoreData(dir + "/" + sub.user.OmangNumber + "/"+ n, sub);
 
+            SendSMS("", sub.user.PhoneNumber.ToString());
+
             return submissionDto;
         }
         [Authorize]
-        [HttpGet("get/{id}")]
+        [HttpGet("/submissions/get/{id}")]
         public async Task<ActionResult<List<Submission>>> GetSubs(string id)
         {
             var response = await _firebaseDataContext.GetData(dir + "/" + id);
@@ -64,6 +69,22 @@ namespace API.Controllers
             }
 
             return subs;
+        }
+
+        void SendSMS(string programme, string number)
+        {
+            // Find your Account SID and Auth Token at twilio.com/console
+            // and set the environment variables. See http://twil.io/secure
+            string accountSid = "ACb6bff2fe1dd75e7f0ef7ec2c0d4d7b84";
+            string authToken = "bbd92d17562432a3dc52945087110dd0";
+
+            TwilioClient.Init(accountSid, authToken);
+
+            var message = MessageResource.Create(
+                body: "Thank you for your application to the program! You will get notified about your application via sms or you can visit the my applications page of the website.",
+                from: new Twilio.Types.PhoneNumber("+18453823904"),
+                to: new Twilio.Types.PhoneNumber("+267" + number)
+            );
         }
     }
 }

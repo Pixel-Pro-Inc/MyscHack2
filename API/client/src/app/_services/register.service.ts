@@ -2,14 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
-  baseUrl: string = 'https://localhost:5001/api';
+  baseUrl: string = 'https://myschackathon.azurewebsites.net/api';
 
-  constructor(private http: HttpClient, private toastr: ToastrService, private router: Router) { }
+  constructor(private http: HttpClient, private login: LoginService , private toastr: ToastrService, private router: Router) { }
 
   signup(model: any, dir: string){
     this.http.post(this.baseUrl + dir, model).subscribe(
@@ -26,7 +27,9 @@ export class RegisterService {
         x = 'internship';
       }
 
-      this.router.navigateByUrl('/' + x);
+      console.log(model);
+
+      this.login.login(model, '/user/login');
       },
       error => {
         this.toastr.error(error.error);
