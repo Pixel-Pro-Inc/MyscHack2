@@ -399,12 +399,12 @@ h1, h2, h3, h4, h5, h6 {
   height: 75vh;
   background: url("https://firebasestorage.googleapis.com/v0/b/christ-the-king-cathedral.appspot.com/o/8434_MYE_001.jpg?alt=media&token=8858fc01-0c65-4bc6-b8bf-4bf7d71a7b09") top left;
   background-size: cover;
-  position:static;
+  position: relative;
 }
 #hero:before {
   content: "";
-  background: rgba(255, 255, 255, 0.4);
-  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  position:relative;
   bottom: 0;
   top: 0;
   left: 0;
