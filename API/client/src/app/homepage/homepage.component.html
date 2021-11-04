@@ -5,42 +5,51 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <section id="hero" class="d-flex align-items-center shadow">
+  <section id="hero" class="d-flex align-items-center shadow mb-5">
     <div class="container">
       <h1 class="mb-2">Welcome to the <span>Ministry of Youth Sports and Culture Online Portal</span></h1>
       <h2>We are comitted to youth development</h2>
     </div>
   </section>
 
-<main>
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center mb-5">
-      <div class="col-md-5 p-lg-5 mx-auto my-5">
-        <h1 class="display-4 fw-normal">National services</h1>
-        <p class="lead fw-normal">Let us help you. No more Lines! Go Online!</p>
-        <button class="btn btn-outline-secondary" (click) = "learnmore('NS')">Learn More</button>
-        <button class="btn btn-outline-secondary ml-2" (click) = "joinus('NS')">Join Us</button>
-      </div>
-      <div class="product-device shadow-sm d-none d-md-block"></div>
-      <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-    </div>
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center mb-5">
-      <div class="col-md-5 p-lg-5 mx-auto my-5">
-        <h1 class="display-4 fw-normal">Internships</h1>
-        <p class="lead fw-normal">Get the experience you need to get industry ready</p>
-        <button class="btn btn-outline-secondary" (click) = "learnmore('I')">Learn More</button>
-        <button class="btn btn-outline-secondary ml-2" (click) = "joinus('I')">Join Us</button>
-      </div>
-      <div class="product-device shadow-sm d-none d-md-block"></div>
-      <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-    </div>
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
-      <div class="col-md-5 p-lg-5 mx-auto my-5">
-        <h1 class="display-4 fw-normal">Government voluntering</h1>
-        <p class="lead fw-normal">Give back to the country, represent the love you want to give</p>
-        <button class="btn btn-outline-secondary" (click) = "learnmore('GVS')">Learn More</button>
-        <button class="btn btn-outline-secondary ml-2" (click) = "joinus('GVS')">Join Us</button>
-      </div>
-      <div class="product-device shadow-sm d-none d-md-block"></div>
-      <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-    </div>
-</main>
+<h1 class="text-dark ml-5 mb-4">Apply to our Programmes</h1>
+
+<section id="featured-services" class="featured-services">
+  <div class="container aos-init aos-animate" data-aos="fade-up" style="display:flex; flex-direction: row;  
+  justify-content: center; align-items: center">
+
+<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+  <div class="icon-box aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Equus_quagga_burchellii_-_Etosha%2C_2014.jpg/1200px-Equus_quagga_burchellii_-_Etosha%2C_2014.jpg"
+    alt="zebra"
+    class="mb-3"
+    style="width: 100%;">
+    <h4 class="title"><a href="">National service</a></h4>
+    <p class="description mb-3">Let us help you. No more Lines! Go Online!</p>
+    <button class="btn btn-outline-secondary mr-1" (click) = "learnmore('NS')">Learn More</button>
+    <button class="btn btn-outline-secondary" (click) = "joinus('NS')">Join Us</button>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+  <div class="icon-box aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+    <div class="icon"><i class="bx bx-file"></i></div>
+    <h4 class="title"><a href="">Internships</a></h4>
+    <p class="description mb-3">Get the experience you need to get industry ready</p>
+    <button class="btn btn-outline-secondary mr-1" (click) = "learnmore('I')">Learn More</button>
+    <button class="btn btn-outline-secondary" (click) = "joinus('I')">Join Us</button>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+  <div class="icon-box aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+    <div class="icon"><i class="bx bx-tachometer"></i></div>
+    <h4 class="title"><a href="">Government voluntering</a></h4>
+    <p class="description mb-3">Give back to the country, represent the love you want to give</p>
+    <button class="btn btn-outline-secondary mr-1" (click) = "learnmore('GVS')">Learn More</button>
+    <button class="btn btn-outline-secondary" (click) = "joinus('GVS')">Join Us</button>
+  </div>
+</div>
+
+  </div>
+</section>
